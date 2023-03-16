@@ -12,7 +12,6 @@ The algorithm is optimised for “dense graph” inputs, where E > V^2. With thi
 ## Testing
 
 Tests were run on a single node on the ‘physical’ partition of the Spartan High Performance Computing system, operated by Research Computing Services at The University of Melbourne (https://dashboard.hpc.unimelb.edu.au/).
-The topology of the tested node is detailed in Figure ****.
 The tested node is comprised of 72 cores split evenly among 4 NUMA nodes, exclusively comprised of Intel® Xeon® Gold 6254 Processors (24.75M Cache, 3.10 GHz).
 
 # Files
