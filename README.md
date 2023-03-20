@@ -5,7 +5,7 @@ This program performs high-performance computation of the following problem: A f
 ## Algorithm
 
 The algorithm is optimised for “dense graph” inputs, where $E > V^2$. With this in mind, the following decisions were made regarding algorithm design:
-- _Dinitz's algorithm_ (also known as _Dinic's algorithm_) was chosen for the sequential part of the algorithm, as it has a time complexity of $O(V^2 E)$. The other candidate maximum flow sequential algorithm was the Edmonds-Karp algorithm, with a time complexity of $O(V E^2)$.
+- _Dinitz's algorithm_ (also known as _Dinic's algorithm_) was chosen for the sequential part of the algorithm, as it has a time complexity of $O(V^2 E)$. The other candidate for a maximum flow sequential algorithm was the _Edmonds-Karp algorithm_, with a time complexity of $O(V E^2)$.
 - Graphs were represented using adjacency matrices rather than adjacency lists, as reading, creating, and deleting an edge can be performed in constant time.
 - A Depth-First Search algorithm was selected for the blocking flow search part of Dinitz's Algorithm, as this has a time complexity of $O(V)$. The other candidate was an Advance and Retreat method, with a time complexity of $O(E)$.
 
