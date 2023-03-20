@@ -1,13 +1,13 @@
 # Parallel All Max Flows
 
-This program performs high-performance computation of the following problem: A flow network is a weighted directed graph with one source vertex s and one sink vertex t. The maximum flow of a flow network is the minimum total weight of edges that needs to be removed in order for there to be no route from vertex s to vertex t. Find the minimum of the maximum flows for the set of all flow networks that can be defined given a weighted directed graph with no self-loops. That is, for all possible pairs (s, t) such that s != t. All flow networks in this problem are expected to have at least one route from s to t, therefore, maximum flow > 0.
+This program performs high-performance computation of the following problem: A flow network is a weighted directed graph with one source vertex $s$ and one sink vertex $t$. The maximum flow of a flow network is the minimum total weight of edges that needs to be removed in order for there to be no route from vertex $s$ to vertex $t$. Find the minimum of the maximum flows for the set of all flow networks that can be defined given a weighted directed graph with no self-loops. That is, for all possible pairs $(s, t)$ such that $s \neq t$. All flow networks in this problem are expected to have at least one valid route from $s$ to $t$. Therefore, each flow network has a maximum flow $> 0$.
 
 ## Algorithm
 
-The algorithm is optimised for “dense graph” inputs, where E > V^2. With this in mind, the following decisions were made regarding algorithm design:
-- Dinitz's algorithm (also known as Dinic's algorithm) was chosen for the sequential part of the algorithm, as it has a time complexity of O(V^2 E). The other candidate maximum flow sequential algorithm was the Edmonds-Karp algorithm, with a time complexity of O(V E^2).
+The algorithm is optimised for “dense graph” inputs, where $E > V^2$. With this in mind, the following decisions were made regarding algorithm design:
+- _Dinitz's algorithm_ (also known as _Dinic's algorithm_) was chosen for the sequential part of the algorithm, as it has a time complexity of $O(V^2 E)$. The other candidate maximum flow sequential algorithm was the Edmonds-Karp algorithm, with a time complexity of $O(V E^2)$.
 - Graphs were represented using adjacency matrices rather than adjacency lists, as reading, creating, and deleting an edge can be performed in constant time.
-- A Depth-First Search algorithm was selected for the blocking flow search part of Dinitz's Algorithm, as this has a time complexity of O(V). The other candidate was an Advance and Retreat method, with a time complexity of O(E).
+- A Depth-First Search algorithm was selected for the blocking flow search part of Dinitz's Algorithm, as this has a time complexity of $O(V)$. The other candidate was an Advance and Retreat method, with a time complexity of $O(E)$.
 
 ## Testing
 
