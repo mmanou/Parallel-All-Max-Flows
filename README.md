@@ -32,17 +32,17 @@ The tested node is comprised of 72 cores split evenly among 4 NUMA nodes, exclus
 * Generate an input graph: 
 ```
 g++ -o generator.exe generator.cc
-generator.exe ./input.csv
+./generator.exe ./<filename>.csv
 ```
 
 * (Optional) Print the graph matrix to terminal:
 ```
 g++ -o printgraph.exe printgraph.cc
-printgraph.exe
+./printgraph.exe ./<filename>.csv
 ```
 
 * Run the solver:
 ```
 g++ -fopenmp -std=c++11 -o solution.exe solution.cc
-solution.exe ./input.csv
+./solution.exe ./<filename>.csv
 ```
