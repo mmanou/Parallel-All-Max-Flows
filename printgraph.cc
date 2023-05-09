@@ -1,8 +1,7 @@
 /*
-g++ -fopenmp -o printgraph.exe printgraph.cc
+g++ -o printgraph.exe printgraph.cc
 */
 
-#include <omp.h>
 #include <climits>
 #include <iostream>
 #include <fstream>
@@ -15,20 +14,10 @@ g++ -fopenmp -o printgraph.exe printgraph.cc
 // #define NUM_V 4
 #define NUM_V 7
 
-int dinics_DFS(
-    int curr_vertex,
-    int available_flow,
-    std::vector<std::vector<int>> &graph,
-    std::vector<int> &levels,
-    int s,
-    int t
-);
-
-
 int main(int argc, char **argv) {
 
     // Read file
-    std::ifstream input_file("input.csv");
+    std::ifstream input_file(argv[1]);
 
     std::string line;
     std::string cell;
